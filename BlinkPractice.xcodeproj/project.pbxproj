@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		797193C41C1198EF00723155 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797193C31C1198EF00723155 /* AppDelegate.swift */; };
+		797193C61C1198EF00723155 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797193C51C1198EF00723155 /* ViewController.swift */; };
+		797193C91C1198EF00723155 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 797193C71C1198EF00723155 /* Main.storyboard */; };
+		797193CB1C1198EF00723155 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 797193CA1C1198EF00723155 /* Assets.xcassets */; };
+		797193CE1C1198EF00723155 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 797193CC1C1198EF00723155 /* LaunchScreen.storyboard */; };
+		797193D61C1199BE00723155 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 797193D51C1199BE00723155 /* AVFoundation.framework */; };
+		797193D81C11B4FF00723155 /* song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 797193D71C11B4FF00723155 /* song.mp3 */; };
+		797193DB1C11C3AD00723155 /* LeanOn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 797193DA1C11C3AD00723155 /* LeanOn.mp3 */; };
+		7971940F1C11ED8900723155 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7971940E1C11ED8900723155 /* CoreMedia.framework */; };
+		797194111C11ED9200723155 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 797194101C11ED9200723155 /* MediaPlayer.framework */; };
+		797194131C11ED9E00723155 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 797194121C11ED9E00723155 /* GLKit.framework */; };
+		797194151C11EDA600723155 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 797194141C11EDA600723155 /* OpenGLES.framework */; };
+		797194171C11EDAF00723155 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 797194161C11EDAF00723155 /* AudioToolbox.framework */; };
+		797194191C11EDB600723155 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 797194181C11EDB600723155 /* Accelerate.framework */; };
+		7971941B1C11EDC900723155 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7971941A1C11EDC900723155 /* UIKit.framework */; };
+		7971941D1C11EDCF00723155 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7971941C1C11EDCF00723155 /* Foundation.framework */; };
+		7971941F1C11EDD600723155 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7971941E1C11EDD600723155 /* CoreGraphics.framework */; };
+		797194241C11EE1A00723155 /* BBAudioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 797194211C11EE1A00723155 /* BBAudioModel.m */; };
+		797194251C11EE1A00723155 /* BBMediaPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 797194231C11EE1A00723155 /* BBMediaPlayer.m */; };
+		797194311C11EE6F00723155 /* bark.c in Sources */ = {isa = PBXBuildFile; fileRef = 797194281C11EE6F00723155 /* bark.c */; };
+		797194321C11EE6F00723155 /* fft.c in Sources */ = {isa = PBXBuildFile; fileRef = 7971942B1C11EE6F00723155 /* fft.c */; };
+		797194331C11EE6F00723155 /* peak_picker.c in Sources */ = {isa = PBXBuildFile; fileRef = 7971942D1C11EE6F00723155 /* peak_picker.c */; };
+		797194341C11EE6F00723155 /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = 7971942F1C11EE6F00723155 /* util.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		797193C01C1198EF00723155 /* BlinkPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlinkPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		797193C31C1198EF00723155 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		797193C51C1198EF00723155 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		797193C81C1198EF00723155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		797193CA1C1198EF00723155 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		797193CD1C1198EF00723155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		797193CF1C1198EF00723155 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		797193D51C1199BE00723155 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		797193D71C11B4FF00723155 /* song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song.mp3; sourceTree = "<group>"; };
+		797193DA1C11C3AD00723155 /* LeanOn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeanOn.mp3; sourceTree = "<group>"; };
+		797193E01C11D9D200723155 /* BlinkPractice-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BlinkPractice-Bridging-Header.h"; sourceTree = "<group>"; };
+		7971940E1C11ED8900723155 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		797194101C11ED9200723155 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		797194121C11ED9E00723155 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		797194141C11EDA600723155 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		797194161C11EDAF00723155 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		797194181C11EDB600723155 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		7971941A1C11EDC900723155 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7971941C1C11EDCF00723155 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7971941E1C11EDD600723155 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		797194201C11EE1A00723155 /* BBAudioModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAudioModel.h; sourceTree = "<group>"; };
+		797194211C11EE1A00723155 /* BBAudioModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAudioModel.m; sourceTree = "<group>"; };
+		797194221C11EE1A00723155 /* BBMediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBMediaPlayer.h; sourceTree = "<group>"; };
+		797194231C11EE1A00723155 /* BBMediaPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBMediaPlayer.m; sourceTree = "<group>"; };
+		797194281C11EE6F00723155 /* bark.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bark.c; sourceTree = "<group>"; };
+		797194291C11EE6F00723155 /* bark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bark.h; sourceTree = "<group>"; };
+		7971942A1C11EE6F00723155 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		7971942B1C11EE6F00723155 /* fft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fft.c; sourceTree = "<group>"; };
+		7971942C1C11EE6F00723155 /* fft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fft.h; sourceTree = "<group>"; };
+		7971942D1C11EE6F00723155 /* peak_picker.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = peak_picker.c; sourceTree = "<group>"; };
+		7971942E1C11EE6F00723155 /* peak_picker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = peak_picker.h; sourceTree = "<group>"; };
+		7971942F1C11EE6F00723155 /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
+		797194301C11EE6F00723155 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		797193BD1C1198EF00723155 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7971941F1C11EDD600723155 /* CoreGraphics.framework in Frameworks */,
+				7971941D1C11EDCF00723155 /* Foundation.framework in Frameworks */,
+				7971941B1C11EDC900723155 /* UIKit.framework in Frameworks */,
+				797194191C11EDB600723155 /* Accelerate.framework in Frameworks */,
+				797194171C11EDAF00723155 /* AudioToolbox.framework in Frameworks */,
+				797194151C11EDA600723155 /* OpenGLES.framework in Frameworks */,
+				797194131C11ED9E00723155 /* GLKit.framework in Frameworks */,
+				797194111C11ED9200723155 /* MediaPlayer.framework in Frameworks */,
+				7971940F1C11ED8900723155 /* CoreMedia.framework in Frameworks */,
+				797193D61C1199BE00723155 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		797193B71C1198EF00723155 = {
+			isa = PBXGroup;
+			children = (
+				7971941E1C11EDD600723155 /* CoreGraphics.framework */,
+				7971941C1C11EDCF00723155 /* Foundation.framework */,
+				7971941A1C11EDC900723155 /* UIKit.framework */,
+				797194181C11EDB600723155 /* Accelerate.framework */,
+				797194161C11EDAF00723155 /* AudioToolbox.framework */,
+				797194141C11EDA600723155 /* OpenGLES.framework */,
+				797194121C11ED9E00723155 /* GLKit.framework */,
+				797194101C11ED9200723155 /* MediaPlayer.framework */,
+				7971940E1C11ED8900723155 /* CoreMedia.framework */,
+				797193D51C1199BE00723155 /* AVFoundation.framework */,
+				797193C21C1198EF00723155 /* BlinkPractice */,
+				797193C11C1198EF00723155 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		797193C11C1198EF00723155 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				797193C01C1198EF00723155 /* BlinkPractice.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		797193C21C1198EF00723155 /* BlinkPractice */ = {
+			isa = PBXGroup;
+			children = (
+				797193C31C1198EF00723155 /* AppDelegate.swift */,
+				797193C51C1198EF00723155 /* ViewController.swift */,
+				797193C71C1198EF00723155 /* Main.storyboard */,
+				797194261C11EE2500723155 /* BubbleBeat */,
+				797193CA1C1198EF00723155 /* Assets.xcassets */,
+				797193D71C11B4FF00723155 /* song.mp3 */,
+				797193DA1C11C3AD00723155 /* LeanOn.mp3 */,
+				797193CC1C1198EF00723155 /* LaunchScreen.storyboard */,
+				797193CF1C1198EF00723155 /* Info.plist */,
+				797193E01C11D9D200723155 /* BlinkPractice-Bridging-Header.h */,
+			);
+			path = BlinkPractice;
+			sourceTree = "<group>";
+		};
+		797194261C11EE2500723155 /* BubbleBeat */ = {
+			isa = PBXGroup;
+			children = (
+				797194271C11EE6F00723155 /* DSPLib */,
+				797194201C11EE1A00723155 /* BBAudioModel.h */,
+				797194211C11EE1A00723155 /* BBAudioModel.m */,
+				797194221C11EE1A00723155 /* BBMediaPlayer.h */,
+				797194231C11EE1A00723155 /* BBMediaPlayer.m */,
+			);
+			name = BubbleBeat;
+			sourceTree = "<group>";
+		};
+		797194271C11EE6F00723155 /* DSPLib */ = {
+			isa = PBXGroup;
+			children = (
+				797194281C11EE6F00723155 /* bark.c */,
+				797194291C11EE6F00723155 /* bark.h */,
+				7971942A1C11EE6F00723155 /* constants.h */,
+				7971942B1C11EE6F00723155 /* fft.c */,
+				7971942C1C11EE6F00723155 /* fft.h */,
+				7971942D1C11EE6F00723155 /* peak_picker.c */,
+				7971942E1C11EE6F00723155 /* peak_picker.h */,
+				7971942F1C11EE6F00723155 /* util.c */,
+				797194301C11EE6F00723155 /* util.h */,
+			);
+			path = DSPLib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		797193BF1C1198EF00723155 /* BlinkPractice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 797193D21C1198EF00723155 /* Build configuration list for PBXNativeTarget "BlinkPractice" */;
+			buildPhases = (
+				797193BC1C1198EF00723155 /* Sources */,
+				797193BD1C1198EF00723155 /* Frameworks */,
+				797193BE1C1198EF00723155 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlinkPractice;
+			productName = BlinkPractice;
+			productReference = 797193C01C1198EF00723155 /* BlinkPractice.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		797193B81C1198EF00723155 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Innofied Solutions Pvt. Ltd.";
+				TargetAttributes = {
+					797193BF1C1198EF00723155 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 797193BB1C1198EF00723155 /* Build configuration list for PBXProject "BlinkPractice" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 797193B71C1198EF00723155;
+			productRefGroup = 797193C11C1198EF00723155 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				797193BF1C1198EF00723155 /* BlinkPractice */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		797193BE1C1198EF00723155 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				797193DB1C11C3AD00723155 /* LeanOn.mp3 in Resources */,
+				797193CE1C1198EF00723155 /* LaunchScreen.storyboard in Resources */,
+				797193CB1C1198EF00723155 /* Assets.xcassets in Resources */,
+				797193D81C11B4FF00723155 /* song.mp3 in Resources */,
+				797193C91C1198EF00723155 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		797193BC1C1198EF00723155 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				797194321C11EE6F00723155 /* fft.c in Sources */,
+				797194311C11EE6F00723155 /* bark.c in Sources */,
+				797193C61C1198EF00723155 /* ViewController.swift in Sources */,
+				797193C41C1198EF00723155 /* AppDelegate.swift in Sources */,
+				797194331C11EE6F00723155 /* peak_picker.c in Sources */,
+				797194341C11EE6F00723155 /* util.c in Sources */,
+				797194241C11EE1A00723155 /* BBAudioModel.m in Sources */,
+				797194251C11EE1A00723155 /* BBMediaPlayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		797193C71C1198EF00723155 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				797193C81C1198EF00723155 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		797193CC1C1198EF00723155 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				797193CD1C1198EF00723155 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		797193D01C1198EF00723155 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		797193D11C1198EF00723155 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		797193D31C1198EF00723155 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BlinkPractice",
+					"$(PROJECT_DIR)/BlinkPractice/FBAudioLib",
+				);
+				INFOPLIST_FILE = BlinkPractice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.innofied.BlinkPractice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BlinkPractice/BlinkPractice-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		797193D41C1198EF00723155 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BlinkPractice",
+					"$(PROJECT_DIR)/BlinkPractice/FBAudioLib",
+				);
+				INFOPLIST_FILE = BlinkPractice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.innofied.BlinkPractice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BlinkPractice/BlinkPractice-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		797193BB1C1198EF00723155 /* Build configuration list for PBXProject "BlinkPractice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				797193D01C1198EF00723155 /* Debug */,
+				797193D11C1198EF00723155 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		797193D21C1198EF00723155 /* Build configuration list for PBXNativeTarget "BlinkPractice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				797193D31C1198EF00723155 /* Debug */,
+				797193D41C1198EF00723155 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 797193B81C1198EF00723155 /* Project object */;
+}
