@@ -19,14 +19,16 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-//        [[NSNotificationCenter defaultCenter]
-//            addObserver:self
-//            selector:@selector(onsetDetected:)
-//        name:@"onsetDetected"
-//        object:nil ];
-        
+        BBAudioModel.sharedAudioModel().setupAudioSession()
+        BBAudioModel.sharedAudioModel().setupAudioUnit()
+        BBAudioModel.sharedAudioModel().startAudioUnit()
+        BBAudioModel.sharedAudioModel().startAudioSession()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onsetDetected:", name: "onsetDetected", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "mediaPickerFinished:", name: "mediaPickerFinished", object: nil)
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "songFinished:", name: "songFinished", object: nil)
 
     }
 
@@ -35,7 +37,34 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func blinkTorch(sender: AnyObject) {
+
+    @IBAction func playMusic(sender: AnyObject) {
+                
+        audioPlayer = BBMediaPlayer()
+        BBAudioModel.sharedAudioModel().setMusicInput()
+        BBAudioModel.sharedAudioModel().canReadMusicFile = true
+        audioPlayer.parentViewController = self
+        audioPlayer.showMediaPicker()
+    }
+    
+    func onsetDetected(notification : NSNotification){
+       
+        let salience : CGFloat = (notification.userInfo!["salience"] as? CGFloat)!
+        
+        print("salience : \(salience)")
+
+        
+        blinkTorchWithSalience(salience)
+    }
+    
+    
+    func mediaPickerFinished(notification : NSNotification){
+        print("picking finished")
+        audioPlayer.play()
+    }
+    
+    
+    func blinkTorchWithSalience(salience: CGFloat) {
         
         let avDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         
@@ -44,7 +73,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             // lock your device for configuration
             
             do {
-                 try avDevice.lockForConfiguration()
+                try avDevice.lockForConfiguration()
             }
             catch {
                 print("something went wrong")
@@ -53,11 +82,23 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             
             // check if your torchMode is on or off. If on turns it off otherwise turns it on
             if avDevice.torchMode == AVCaptureTorchMode.On {
+                print("making it off")
                 avDevice.torchMode = AVCaptureTorchMode.Off
             } else {
                 // sets the torch intensity to 100%
+                
+                print("making it on")
+
                 do {
-                    try avDevice.setTorchModeOnWithLevel(1.0)
+                    
+                    if salience > 1.5 && salience <= 1.8 {
+                        try avDevice.setTorchModeOnWithLevel(1.0)
+                    }else if salience > 1.8 && salience <= 2.3 {
+                        try avDevice.setTorchModeOnWithLevel(1.0)
+                    }else{
+                        try avDevice.setTorchModeOnWithLevel(1.0)
+                    }
+                    
                 } catch{
                     print("error while setting torch mode to on")
                 }
@@ -65,44 +106,43 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             // unlock your device
             avDevice.unlockForConfiguration()
         }
+        
+        
+//        let timer = NSTimer(timeInterval: 5.0, target: self, selector: "closeTheTorch", userInfo: nil, repeats: false)
+//        timer.fire()
+        
     }
 
-    @IBAction func playMusic(sender: AnyObject) {
+    
+    
+    func closeTheTorch(){
         
-        let path = NSBundle.mainBundle().pathForResource("song", ofType:"mp3")
-        let fileURL = NSURL(fileURLWithPath: path!)
+        let avDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         
-        do {
-            
-        try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, withOptions: AVAudioSessionCategoryOptions.DuckOthers)
+        // check if the device has torch
+        if avDevice.hasTorch {
+            // lock your device for configuration
             
             do {
-                try  AVAudioSession.sharedInstance().setActive(true, withOptions: AVAudioSessionSetActiveOptions.init(rawValue:1))
-                
-                audioPlayer = BBMediaPlayer()
-                BBAudioModel.sharedAudioModel().setMusicInput()
-                
-                
-
-            }catch let error as NSError {
-                print("error in making audio session active")
-                print("error : \(error.localizedDescription)")
+                try avDevice.lockForConfiguration()
+            }
+            catch {
+                print("something went wrong")
             }
             
-        }catch let error as NSError{
-            print("error in creating audio session")
-            print("error : \(error.localizedDescription)")
+            // check if your torchMode is on or off. If on turns it off otherwise turns it on
+            if avDevice.torchMode == AVCaptureTorchMode.On {
+                avDevice.torchMode = AVCaptureTorchMode.Off
+            }
+            // unlock your device
+            avDevice.unlockForConfiguration()
         }
     }
     
-    func onsetDetected(notification : NSNotification){
-       
-        let salience : CGFloat = (notification.userInfo!["salience"] as? CGFloat)!
-        
-        print("salience : \(salience)")
-        
-    }
-
     
+    func songFinished(notification : NSNotification){
+        
+        closeTheTorch()
+    }
 }
 
