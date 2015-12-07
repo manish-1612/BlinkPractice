@@ -336,15 +336,6 @@
     {
         usleep(1000);
     }
-    
-    //stop background loading thread
-//	if(loadingInBackground == YES)
-//		earlyFinish = YES;
-//    
-//	while(loadingInBackground == YES)
-//	{
-//		usleep(5000); //wait for file thread to finish
-//	}
 }
 
 #pragma mark - Media Picking Delegate Methods -

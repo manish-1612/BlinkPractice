@@ -52,7 +52,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         let salience : CGFloat = (notification.userInfo!["salience"] as? CGFloat)!
         
         print("salience : \(salience)")
-
         
         blinkTorchWithSalience(salience)
     }
