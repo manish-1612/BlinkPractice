@@ -39,7 +39,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 
 
     @IBAction func playMusic(sender: AnyObject) {
-                
+        
         audioPlayer = BBMediaPlayer()
         BBAudioModel.sharedAudioModel().setMusicInput()
         BBAudioModel.sharedAudioModel().canReadMusicFile = true
@@ -106,11 +106,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             // unlock your device
             avDevice.unlockForConfiguration()
         }
-        
-        
-//        let timer = NSTimer(timeInterval: 5.0, target: self, selector: "closeTheTorch", userInfo: nil, repeats: false)
-//        timer.fire()
-        
     }
 
     
