@@ -12,6 +12,7 @@
 @implementation BBMediaPlayer
 
 @synthesize playing;
+@synthesize currentSongURL;
 @synthesize mediaReadPosition;
 @synthesize artist;
 @synthesize title;
@@ -342,6 +343,10 @@
 
 - (void)mediaPicker:(MPMediaPickerController *)inputMediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection
 {
+    
+    NSLog(@"media : %@", mediaItemCollection.description);
+    
+    
 	for (MPMediaItem* item in mediaItemCollection.items)
     {
         

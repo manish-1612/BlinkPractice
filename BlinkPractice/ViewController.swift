@@ -40,6 +40,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 
     @IBAction func playMusic(sender: AnyObject) {
         
+        let path = NSBundle.mainBundle().pathForResource("song", ofType:"mp3")
+        let fileURL = NSURL(fileURLWithPath: path!)
+        
+        
         audioPlayer = BBMediaPlayer()
         BBAudioModel.sharedAudioModel().setMusicInput()
         BBAudioModel.sharedAudioModel().canReadMusicFile = true

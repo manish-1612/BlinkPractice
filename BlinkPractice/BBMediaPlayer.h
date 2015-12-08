@@ -21,10 +21,11 @@
     NSMutableArray* mediaItemQueue;             // queued media items
     
     int mediaWritePosition;
-    NSURL* currentSongURL;                      // location of current song
+    
     
 }
 
+@property (strong , nonatomic) NSURL* currentSongURL;  // location of current song
 @property (nonatomic, weak) UIViewController* parentViewController;
 @property (readonly) BOOL playing;              // whether player is currently playing audio
 
